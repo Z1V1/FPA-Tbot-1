@@ -155,7 +155,9 @@ bot.on("callback_query", (callbackQuery) => {
     case 'GetPlayerRanking': {
       const chatId = callbackQuery.message.chat.id;
       inputTextState.chatId = true;
-      bot.sendMessage(callbackQuery.message.chat.id, "Type in a player's name and hit send." );
+      bot.sendMessage(callbackQuery.message.chat.id, "Type in a player's name and hit send.", {"reply_markup": {
+      "force_reply": true
+      }});
       break;
     };
       
